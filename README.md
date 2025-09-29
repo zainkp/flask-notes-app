@@ -7,8 +7,3 @@ Users can add notes and view them instantly.
 - Add notes
 - View saved notes
 - Simple user interface
-
-## Installation
-1. Clone this repository:
-   ```bash
-   https://github.com/zainkp/flask-notes-app

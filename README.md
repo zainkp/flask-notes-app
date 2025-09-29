@@ -11,4 +11,4 @@ Users can add notes and view them instantly.
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/flask-notes-app.git
+   https://github.com/zainkp/flask-notes-app

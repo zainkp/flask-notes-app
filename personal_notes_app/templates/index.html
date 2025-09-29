@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Notes APP</title>
+    <link href="{{ url_for('static',filename='style.css')}}" rel="stylesheet">
+</head>
+<body>
+    <h1>Personal Notes</h1>
+    <form method = "POST">
+        <input type="text" name="note" placeholder="write a note" required>
+        <button type="submit">Add Note</button>
+    </form>
+
+    <h2>Saved Notes:</h2>
+    <ul>
+        {% for note in notes %}
+            <li>{{note}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

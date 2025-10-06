@@ -25,11 +25,18 @@ button{
     border: none;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
+form[action*="delete"] button {
+    background: #e74c3c;
+}
+form[action*="delete"] button:hover {
+    background: #c0392b;
 button:hover{
     background: #45a049;
 }
 ul{
     list-style-type: square;
     padding-left: 20px;
+
 }

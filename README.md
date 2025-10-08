@@ -6,4 +6,5 @@ Users can add notes and view them instantly.
 ## Features
 - Add notes
 - View saved notes
+- Delete saved notes
 - Simple user interface

@@ -13,10 +13,10 @@
 
     <h2>Saved Notes:</h2>
     <ul>
-        {% for i, note in enumerate(notes) %}
+        {% for  note in notes %}
             <li>
                 {{note}}
-                <form action = "/delete/{{ i }}" method="POST" style="display:inline;">
+                <form action = "/delete/{{ loop.index0 }}" method="POST" style="display:inline;">
                     <button type="submit">Delete</button>
                 </form>
             </li>

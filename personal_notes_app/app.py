@@ -10,6 +10,7 @@ def home():
         note = request.form.get("note")
         if note:
             notes.append(note)
+        return redirect(url_for("home"))
     return render_template("index.html",notes=notes)
 
 @app.route("/delete/<int:index>", methods=["POST"])

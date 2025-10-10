@@ -1,9 +1,15 @@
-
+html{
+    background-color: beige;
+}
 body{
+    width: 600px;
+    height: 450px;
+    border: .2px solid rgb(0, 0, 0);
     font-family:Arial, Helvetica, sans-serif;
-    margin: auto;
-    background-color: #f2f2f2;
-    padding: 20px;
+    margin: 30px auto;
+    background-color: #dffeaf;
+    padding: 0px 100px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 h1{
     font-size: 60px;
@@ -28,15 +34,14 @@ button{
     border-radius: 5px;
 }
 form[action*="delete"] button {
-    background: #e74c3c;
+    background: #f92008c4;
 }
 form[action*="delete"] button:hover {
-    background: #c0392b;
+    background: #e9382b;
 button:hover{
     background: #45a049;
 }
 ul{
     list-style-type: square;
     padding-left: 20px;
-
 }

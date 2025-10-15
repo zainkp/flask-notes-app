@@ -1,24 +1,40 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-notes = []
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'repeat'
+app.config['MYSQL_DB'] = 'notesdb'
 
-@app.route("/",methods=["GET","POST"])
-def home():
-    if request.method == "POST":
-        note = request.form.get("note")
-        if note:
-            notes.append(note)
-        return redirect(url_for("home"))
-    return render_template("index.html",notes=notes)
+mysql = MySQL(app)
 
-@app.route("/delete/<int:index>", methods=["POST"])
-def delete(index):
-    if 0 <= index < len(notes):
-        notes.pop(index)
-    return redirect(url_for("home"))
-    
-if __name__ == "__main__":
+@app.route('/')
+def index():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM notes")
+    notes = cur.fetchall()
+    cur.close()
+    return render_template('index.html', notes=notes)
 
-        app.run(debug= True)
+@app.route('/add', methods=['POST'])
+def add_note():
+    title = request.form['title']
+    content = request.form['content']
+    cur = mysql.connection.cursor()
+    cur.execute("INSERT INTO notes (title, content) VALUES (%s, %s)", (title, content))
+    mysql.connection.commit()
+    cur.close()
+    return redirect('/')
+
+@app.route('/delete/<int:id>')
+def delete_note(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM notes WHERE id = %s", (id,))
+    mysql.connection.commit()
+    cur.close()
+    return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)

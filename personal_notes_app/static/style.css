@@ -1,48 +1,110 @@
-html{
-    background-color: beige;
+html {
+    background-color: #f5f5f5;
+    font-family: 'Poppins', Arial, sans-serif;
 }
-body{
-    width: 600px;
-    height: 450px;
-    border: .2px solid rgb(0, 0, 0);
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 30px auto;
-    background-color: #dffeaf;
-    padding: 0px 100px 40px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+body {
+    width: 700px;
+    height: auto;
+    margin: 50px auto;
+    background-color: #fffbea;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
 }
-h1{
-    font-size: 60px;
+body:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    font-size: 48px;
     color: #333;
-    padding: 0px;
     text-align: center;
-    text-shadow: 3px 3px 1px rgb(226, 184, 184);
+    text-shadow: none;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
 }
-form{
-    margin-bottom: 20px;
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
 }
-input{
-    padding: 8px;
-    margin-right: 5px;
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px 15px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
-button{
-    padding: 8px 12px;
-    background: #4CAF50;
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffb74d;
+    box-shadow: 0 0 6px rgba(255, 183, 77, 0.7);
+}
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+button {
+    padding: 10px 18px;
+    background: #fbbc04;
     border: none;
-    color: white;
+    color: #333;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
+button:hover {
+    background: #fcd34d;
+    transform: translateY(-2px);
+}
+
 form[action*="delete"] button {
-    background: #f92008c4;
+    background: #ef5350;
+    color: white;
 }
 form[action*="delete"] button:hover {
-    background: #e9382b;
+    background: #e53935;
 }
-button:hover{
-    background: #45a049;
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 }
-ul{
-    list-style-type: square;
-    padding-left: 20px;
+
+ul li {
+    background: #fffde7;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+ul li span {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+ul li small {
+    font-size: 13px;
+    color: #777;
 }

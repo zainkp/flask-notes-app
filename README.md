@@ -22,13 +22,6 @@ Basic Flask structure with a simple input form and notes display.
 
 ---
 
-### 🎨 2. New Look
-Improved UI with a cleaner, more modern layout.
-
-![New Look](snaps/new%20look.png)
-
----
-
 ### 🗑️ 3. Delete Button Feature
 Added delete functionality allowing users to remove saved notes.
 
@@ -42,6 +35,14 @@ Integrated a database to store notes persistently instead of in-memory.
 ![With Database](snaps/with%20database.png)
 
 ---
+
+### 🎨 2. New Look
+Improved UI with a cleaner, more modern layout.
+
+![New Look](snaps/new%20look.png)
+
+---
+
 
 ## 🚀 Tech Stack
 - **Backend:** Flask (Python)

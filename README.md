@@ -47,11 +47,40 @@ Improved UI with a cleaner, more modern layout.
 ## 🚀 Tech Stack
 - **Backend:** Flask (Python)
 - **Frontend:** HTML, CSS
-- **Database:** SQLite (for persistent storage)
+- **Database:** MySQL
 
 ---
 
 ## ⚙️ Setup Instructions
-1. Clone the repository  
-   ```bash
-   git clone < https://github.com/zainkp/flask-notes-app.git>
+
+1.  **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Setup Database**
+    Make sure you have MySQL installed and running.
+    
+    Create the database and dedicated user:
+    
+    **Git Bash / Command Prompt:**
+    ```bash
+    mysql -u root -p < schema.sql
+    ```
+    
+    **PowerShell:**
+    ```powershell
+    Get-Content schema.sql | mysql -u root -p
+    ```
+
+3.  **Configure Environment**
+    Create a `.env` file in the root directory:
+    ```bash
+    cp .env.example .env
+    ```
+    Open `.env` and update the values if you changed the password in `schema.sql` or have a different configuration.
+
+4.  **Run Application**
+    ```bash
+    python personal_notes_app/app.py
+    ```
